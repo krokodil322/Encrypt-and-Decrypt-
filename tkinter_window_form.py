@@ -5,11 +5,6 @@ from tkinter import filedialog as fd
 from cipher2 import *
 from craft import craft_password
 
-"""ВСЁ GUI ОКНО НАПИСАНО В СТИЛЕ ООП.
-   ВСЕ КЛАССЫ НАСЛЕДУЮТ КЛАСС Tk ИЗ TKINTER
-   КО ВСЕМ МЕТОДАМ И АТРИБУТАМ ВНЕ КЛАССОВ
-   ОБРАЩАТЬСЯ НИКАК НЕЛЬЗЯ(ИНКАПСУЛИРОВАНЫ)"""
-
 #КЛАСС АВТОРИЗАЦИИ 
 class InputPassword(Tk):
 	def __init__(self):
