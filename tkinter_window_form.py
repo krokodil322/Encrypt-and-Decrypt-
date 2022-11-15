@@ -133,8 +133,6 @@ class MainApp(Tk):
 			#строка ниже обновляет текстовое поле
 			self.__set_text()
 			self.show_name_file()
-			#чтобы не прилипало к названаию файла
-			self.user_text.insert(tk.END, "\n")
 			for item in file:
 				self.user_text.insert(tk.END, item)
 		self.start_but["state"], self.save_but["state"] = "enable", "enable"
@@ -144,11 +142,11 @@ class MainApp(Tk):
 		self.__set_text()
 		self.show_name_file()
 		for item in self.crypto_data:
-			self.user_text.insert(tk.END, "\n" + item)
+			self.user_text.insert(tk.END, item)
 
 	def show_name_file(self):
 		self.name = self.name.split("/")[-1]
-		self.user_text.insert(tk.END, "\t\t\tНазвание файла: " + self.name)
+		self.user_text.insert(tk.END, "\t\t\tНазвание файла: " + self.name + '\n')
 			
 	#все функции ниже срабатывают от кнопок и комбобокса
 	def save_file(self):
@@ -190,7 +188,7 @@ class MainApp(Tk):
 		if self.combo_win.current() == 0:
 			self.user_text.delete(1.0, 2.0)
 			self.user_text = self.user_text.get(1.0, tk.END)
-			self.user_text = self.user_text.split("\n")
+			self.user_text = self.user_text.split("|")
 			self.user_text = encrypto(self.user_text)
 			self.crypto_data = [str(item) for item in self.user_text]
 			self.show_data()
