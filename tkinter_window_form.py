@@ -198,7 +198,6 @@ class MainApp(Tk):
 			try:
 				self.user_text.delete(1.0, 2.0)
 				self.user_text = self.user_text.get(1.0, tk.END)
-				#self.user_text - это большая строка
 				self.user_text, self.crypto_data = decrypto(self.user_text), list()
 				for item in self.user_text:
 					if item != '':
